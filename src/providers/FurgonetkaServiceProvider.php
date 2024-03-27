@@ -1,4 +1,4 @@
-<?php namespace DevPlus31\Furgonteka\Providers;
+<?php namespace DevPlus31\Furgonetka\Providers;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Foundation\Application;
@@ -11,7 +11,7 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
     
     public function register() {
 
-        $this->mergeConfigFrom(dirname(__DIR__, 2) . '/config/fugonteka.php', 'furgonetka');
+        $this->mergeConfigFrom(dirname(__DIR__, 2) . '/config/furgonetka.php', 'furgonetka');
         
         $this->app->singleton(FurgonetkaClient::class, function(Application $app)  {
             $config = $app['config']['furgonetka'];
@@ -38,7 +38,7 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
     public function boot() {
         $this->publishes(
             [
-                dirname(__DIR__, 2) . '/config/fugonteka.php'=> $this->furgonetkaConfigPublishPath()
+                dirname(__DIR__, 2) . '/config/furgonetka.php'=> $this->furgonetkaConfigPublishPath()
             ],
             'furgonetka'
         );

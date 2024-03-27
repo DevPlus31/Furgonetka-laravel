@@ -1,6 +1,6 @@
 {
     "name": "devplus31/furgonetka-laravel",
-    "description": "Furgonteka Laravel",
+    "description": "Furgonetka Laravel",
     "type": "library",
     "require": {
         "php": "^8.1",

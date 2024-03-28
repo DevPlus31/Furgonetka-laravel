@@ -5,7 +5,7 @@
     "require": {
         "php": "^8.1",
         "illuminate/support": ">=11.0",
-        "kwarcek/furgonetka-rest-api-php": "^1.0"
+        "kwarcek/furgonetka-rest-api-php": "dev-master"
     },
     "license": "MIT",
     "autoload": {
@@ -26,6 +26,12 @@
             ]
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/DevPlus31/furgonetka-rest-api-php"
+        }
+    ],
     "prefer-stable": true,
     "config": {
         "sort-packages": true

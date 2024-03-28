@@ -4,7 +4,6 @@
     "type": "library",
     "require": {
         "php": "^8.1",
-        "illuminate/support": "^11.1.0",
         "kwarcek/furgonetka-rest-api-php": "^1.0"
     },
     "license": "MIT",

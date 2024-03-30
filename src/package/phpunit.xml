@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory suffix="Test.php">./tests/Integration</directory>
+        </testsuite>
+    </testsuites>
+    <coverage cacheDirectory=".phpunit.cache/code-coverage"
+              processUncoveredFiles="true">
+    </coverage>
+    <php>
+        <server name="APP_ENV" value="development"/>
+        <env name="FURGONETKA_CLIENT_ID" value="" />
+        <env name="FURGONETKA_CLIENT_SECRET" value="" />
+        <env name="FURGONETKA_USERNAME" value="" />
+        <env name="FURGONETKA_PASSWORD" value="" />
+    </php>
+</phpunit>

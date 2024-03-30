@@ -1,4 +1,6 @@
-<?php namespace DevPlus31\Furgonetka\Providers;
+<?php
+
+namespace DevPlus31\Furgonetka\providers;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Foundation\Application;
@@ -7,12 +9,12 @@ use Illuminate\Support\ServiceProvider;
 use Kwarcek\FurgonetkaRestApi\FurgonetkaClient;
 use Kwarcek\FurgonetkaRestApi\LoginCredential;
 
-class FurgonetkaServiceProvider extends ServiceProvider implements DeferrableProvider { 
-    
+class FurgonetkaServiceProvider extends ServiceProvider implements DeferrableProvider {
+
     public function register() {
 
         $this->mergeConfigFrom(dirname(__DIR__, 2) . '/config/furgonetka.php', 'furgonetka');
-        
+
         $this->app->singleton(FurgonetkaClient::class, function(Application $app)  {
             $config = $app['config']['furgonetka'];
 
@@ -46,7 +48,7 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
 
     public function provides()
     {
-       return [FurgonetkaClient::class];
+        return [FurgonetkaClient::class];
     }
 
     public function furgonetkaConfigPublishPath()

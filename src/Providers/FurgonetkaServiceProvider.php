@@ -1,6 +1,6 @@
 <?php
 
-namespace DevPlus31\Furgonetka\providers;
+namespace DevPlus31\Furgonetka\Providers;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Foundation\Application;

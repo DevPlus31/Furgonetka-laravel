@@ -13,7 +13,7 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
 
     public function register() {
 
-        $this->mergeConfigFrom(dirname(__DIR__, 2) . '/config/furgonetka.php', 'furgonetka');
+        $this->mergeConfigFrom($this->configFile(), 'furgonetka');
 
         $this->app->singleton(FurgonetkaClient::class, function(Application $app)  {
             $config = $app['config']['furgonetka'];
@@ -37,10 +37,15 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
         });
     }
 
+    public function configFile()
+    {
+        return dirname(__DIR__, 2) . '/src/config/furgonetka.php';
+    }
+
     public function boot() {
         $this->publishes(
             [
-                dirname(__DIR__, 2) . '/config/furgonetka.php'=> $this->furgonetkaConfigPublishPath()
+                $this->configFile() => $this->furgonetkaConfigPublishPath()
             ],
             'furgonetka'
         );

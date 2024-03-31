@@ -39,7 +39,7 @@ class FurgonetkaServiceProvider extends ServiceProvider implements DeferrablePro
 
     public function configFile()
     {
-        return dirname(__DIR__, 2) . '/src/config/furgonetka.php';
+        return dirname(__DIR__, 2) . '/config/furgonetka.php';
     }
 
     public function boot() {
